@@ -22,9 +22,20 @@ module Blergers
     has_many :posts, through: :post_tags
 
    def self.top_tags
+     #how brit did it
+     #Blergers::Tag.all.map {|x| [x.name, x.posts.count] }.sort_by {|x| x|1|}.reverse
+     #maybe? I cant tell im blindlol
 
+     #Howdidbritdothis.jpg
 
+     #Blergers::Tags.joins(:post_tags).
+     #group_by {|x| x.name}.
+     #map {|k, v| [k, v.length}.
+     #sort_by {|x| x|1| }.
+     #reverse
+     Tag.joins(:post_tags).group(:name).count
 
+     
    end
 
 
